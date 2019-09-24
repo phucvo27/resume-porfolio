@@ -1,0 +1,79 @@
+header{
+    font-family: 'Oswald', sans-serif;
+    width: 22%;
+    height: 100%;
+    overflow: auto;
+    position: fixed;
+
+    .user__avatar{
+        width: 11rem;
+        margin: 3rem auto 2rem;
+
+        img{
+            width: 100%;
+            display: inline-block;
+            border: .1rem solid #e5e5e5;
+            border-radius: 50%;
+        }
+    }
+
+    .user__infor{
+        text-align: center;
+    }
+
+    .navigation {
+        width: 100%;
+
+        &__item{
+            &.active{
+                .navigation__link{
+                    background-color: #fcfcfc;
+                }
+                .navigation__link::after{
+                    height: 100%;
+                    width: .3rem;
+                    top: 0;
+                    left: 99%;
+                    transform: translateX(0);
+                }
+            }
+        }
+        &__link{
+            text-align: center;
+            text-decoration: none;
+            display: block;
+            color: $color-black;
+            font-size: 1.5rem;
+            font-weight: 300;
+            position: relative;
+            padding: 1rem 2rem;
+            border-bottom: .1rem solid $color-border-bottom-link;
+            transition: color .2s;
+            &:first-child{
+                border-top: .1rem solid $color-border-bottom-link;
+            }
+
+            &:hover{
+                color: $color-primary;
+                &::after{
+                    width: 100%;
+                }
+                
+            }
+
+            &::after{
+                position: absolute;
+                content: '';
+                display: block;
+                width: 0rem;
+                height: .2rem;
+                left: 50%;
+                bottom: 0;
+                transform-origin: center;
+                transform: translateX(-50%);
+                transition: width .4s;
+                background-color: $color-primary;
+            }
+        }
+    }
+}

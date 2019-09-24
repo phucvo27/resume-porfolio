@@ -1,0 +1,76 @@
+.main{
+    height: 100%;
+    margin-left: 22%;
+    position: relative;
+    background-color: $color-white;
+    overflow: auto;
+    .wrapper{
+        width: 50rem;
+        height: 50rem;
+        padding-left: 1.5rem;
+        background-color: #f5f5f5;
+        perspective: 0rem;
+
+        .subpage{
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            position: relative;
+            // animation-name: spin;
+            animation-duration: 10s;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+            // backface-visibility: hidden;
+            .face{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                // opacity: .5;
+            }
+            .front{
+                background-color: goldenrod;
+                transform: rotateY(0deg) translateZ(25rem);
+            }
+            .left{
+                background-color: green;
+                transform: rotateY(-90deg) translateZ(25rem);
+            }
+            .right{
+                background-color: orange;
+                transform: rotateY(90deg) translateZ(25rem);
+            }
+            .back{
+                background-color: violet;
+                transform: rotateY(180deg) translateZ(25rem);
+            }
+            .top{
+                background-color: orangered;
+                transform: rotateX(90deg) translateZ(25rem);
+            }
+            .bottom{
+                background-color: lightblue;
+                transform: rotateX(-90deg) translateZ(25rem);
+            }
+        }
+    }
+}
+
+@keyframes spin {
+    0%{
+        transform: rotateY(0deg)
+      }
+      50%{
+        transform: rotateY(360deg)
+      }
+      75%{
+        transform: rotateX(90deg)
+      }
+      90%{
+        transform: rotateX(-90deg)
+      }
+      100%{
+        transform: rotateX(0deg)
+      }
+}

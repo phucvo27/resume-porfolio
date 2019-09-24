@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import SideNav from './components/SideNav/side-nav.components';
-import HomePage from './pages/homepage/homepage.component';
+import MainPage from './pages/mainpage/mainpage.component';
 
 class App extends React.Component{
 
@@ -10,7 +10,7 @@ class App extends React.Component{
             <BrowserRouter>
                 <SideNav />
                 <Switch>
-                    <Route exact path='/' component={HomePage} />
+                    <Route exact path='/' component={MainPage} />
                 </Switch>
             </BrowserRouter>
         )
