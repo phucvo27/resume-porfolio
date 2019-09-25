@@ -13,7 +13,7 @@ class MainPage extends React.Component{
             <main className="main">
                 <div className="wrapper">
                     <div className="subpage">
-                        <section className="face front home">
+                        <section className="face front home active">
                             <HomePage />
                         </section>
                         <section className="face left about">

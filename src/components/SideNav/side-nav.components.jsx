@@ -1,16 +1,22 @@
 import React from 'react';
-//import { Link } from 'react-router-dom';
+import avatar from '../../assets/user-avatar.jpg';
+//import jsLogo from '../../assets/js-logo.jpg'
 
-const avatar = 'https://lmpixels.com/demo/sunshine-demo/sunshine-version-2/sunshine-html-template/images/my_photo.png'
 
 class SideNav extends React.Component{
 
     handleRotate = (page, e)=>{
+        e.stopPropagation();
+        const theParentNode = e.target.parentElement;
         const subpage = document.querySelector('.subpage');
         const listFaces = document.querySelectorAll('.face');
+        const listNavigationItems = document.querySelectorAll('.navigation__item');
         for(let i = 0; i < listFaces.length; i++){
             listFaces[i].classList.remove('active');
+            // we can do like this , because our page also has 6 navigation__item 
+            listNavigationItems[i].classList.remove('active')
         }
+        theParentNode.classList.add('active');
         if(subpage){
             switch(page){
                 case 'home':
@@ -43,14 +49,6 @@ class SideNav extends React.Component{
         }
     }
 
-    handleActiveNavigationState = (e)=>{
-        e.stopPropagation();
-        const navigationItems = document.querySelectorAll('.navigation__item');
-        for(let i = 0; i < navigationItems.length; i++){
-            navigationItems[i].classList.remove('active');
-        }
-        this.classList.add('active')
-    }
     render(){
         return (
             <header>
