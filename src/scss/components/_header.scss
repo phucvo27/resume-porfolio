@@ -49,6 +49,7 @@ header{
             padding: 1rem 2rem;
             border-bottom: .1rem solid $color-border-bottom-link;
             transition: color .2s;
+            cursor: pointer;
             &:first-child{
                 border-top: .1rem solid $color-border-bottom-link;
             }

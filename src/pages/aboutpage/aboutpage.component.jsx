@@ -1,16 +1,16 @@
 import React from 'react';
 import TitlePage from '../../components/TitlePage/title-page.component'
 
-class HomePage extends React.Component{
+class AboutPage extends React.Component{
 
     render(){
         return (
             <div className='container'>
-                <TitlePage title='Home'/>
+                <TitlePage title='About'/>
             </div>
         )
     }
 }
 
 
-export default HomePage;
+export default AboutPage;
