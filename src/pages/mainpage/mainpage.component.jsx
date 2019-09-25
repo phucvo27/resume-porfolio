@@ -10,6 +10,7 @@ class MainPage extends React.Component{
                     <div className="subpage">
                         <section className="face front home">
                             <p>This is Home Page</p>
+                            <button onClick={this.handleRotate}>Rotate</button>
                         </section>
                         <section className="face left about"></section>
                         <section className="face right resume"></section>
