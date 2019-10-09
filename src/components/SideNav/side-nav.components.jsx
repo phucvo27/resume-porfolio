@@ -5,9 +5,13 @@ import avatar from '../../assets/user-avatar.jpg';
 
 class SideNav extends React.Component{
 
-    handleRotate = (page, e)=>{
-        e.stopPropagation();
-        const theParentNode = e.target.parentElement;
+    componentDidMount(){
+        const firstPage = document.querySelector('.navigation__link.active');
+        this.handleRotate(firstPage.innerHTML.toLowerCase(), null, firstPage.parentElement);
+    }
+    handleRotate = (page, e = null ,parentElement)=>{
+        e && e.stopPropagation()
+        const theParentNode = e ? e.target.parentElement : parentElement ;
         const subpage = document.querySelector('.subpage');
         const listFaces = document.querySelectorAll('.face');
         const listNavigationItems = document.querySelectorAll('.navigation__item');
@@ -16,7 +20,7 @@ class SideNav extends React.Component{
             // we can do like this , because our page also has 6 navigation__item 
             listNavigationItems[i].classList.remove('active')
         }
-        theParentNode.classList.add('active');
+        theParentNode && theParentNode.classList.add('active');
         if(subpage){
             switch(page){
                 case 'home':
@@ -61,12 +65,12 @@ class SideNav extends React.Component{
                 </div>
                 <nav>
                     <ul className="navigation">
-                        <li className="navigation__item active">
+                        <li className="navigation__item">
                             <p onClick={(e)=>{ this.handleRotate('home', e) }} className="navigation__link">Home</p></li>
                         <li className="navigation__item">
                             <p onClick={(e)=>{ this.handleRotate('about', e) }} className="navigation__link">About</p></li>
-                        <li className="navigation__item">
-                            <p onClick={(e)=>{ this.handleRotate('resume', e) }} className="navigation__link">Resume</p></li>
+                        <li className="navigation__item active">
+                            <p onClick={(e)=>{ this.handleRotate('resume', e) }} className="navigation__link active">Resume</p></li>
                         <li className="navigation__item">
                             <p onClick={(e)=>{ this.handleRotate('porfolio', e) }} className="navigation__link">Porfolio</p></li>
                         <li className="navigation__item">
