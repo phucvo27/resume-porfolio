@@ -37,14 +37,26 @@
         
         }
         .article__title{
-            font-size: 2.2rem;
-            color: #3594BA;
-            margin-bottom: 2rem;
+            
+            margin: 1rem 0;
+            &--text{
+                display: inline-block;
+                font-size: 1.6rem;
+                color: $color-black;
+                margin-bottom: 2rem;
+                transition: color .2s;
+                cursor: pointer;
+                text-decoration: none;
+                &:hover{
+                    color: $color-primary;
+                }
+            }
+            
         }
         .article__description{
-            font-size: 1.6rem;
+            font-size: 1.4rem;
             margin-bottom: 2rem;
-            color: darken( #99A2A3, 20% )
+            color: darken( $color-description, 20% )
         }
     }
     &__footer{

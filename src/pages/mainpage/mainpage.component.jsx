@@ -13,19 +13,22 @@ class MainPage extends React.Component{
             <main className="main">
                 <div className="wrapper">
                     <div className="subpage">
-                        <section className="face front home">
+                        <section className="face front home active">
                             <HomePage />
                         </section>
                         <section className="face left about">
+                        <div className="col"></div>
                             <AboutPage />
                         </section>
                         <section className="face right resume">
                             <ResumePage />
                         </section>
                         <section className="face back porfolio">
+                            
                             <PorfolioPage />
                         </section>
                         <section className="face top blog">
+                            <div className="col"></div>
                             <BlogPage />
                         </section>
                         <section className="face bottom contact">

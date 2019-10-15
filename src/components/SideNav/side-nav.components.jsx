@@ -1,16 +1,26 @@
 import React from 'react';
-//import { Link } from 'react-router-dom';
+import avatar from '../../assets/user-avatar.jpg';
+//import jsLogo from '../../assets/js-logo.jpg'
 
-const avatar = 'https://lmpixels.com/demo/sunshine-demo/sunshine-version-2/sunshine-html-template/images/my_photo.png'
 
 class SideNav extends React.Component{
 
-    handleRotate = (page, e)=>{
+    componentDidMount(){
+        const firstPage = document.querySelector('.navigation__link.active');
+        this.handleRotate(firstPage.innerHTML.toLowerCase(), null, firstPage.parentElement);
+    }
+    handleRotate = (page, e = null ,parentElement)=>{
+        e && e.stopPropagation()
+        const theParentNode = e ? e.target.parentElement : parentElement ;
         const subpage = document.querySelector('.subpage');
         const listFaces = document.querySelectorAll('.face');
+        const listNavigationItems = document.querySelectorAll('.navigation__item');
         for(let i = 0; i < listFaces.length; i++){
             listFaces[i].classList.remove('active');
+            // we can do like this , because our page also has 6 navigation__item 
+            listNavigationItems[i].classList.remove('active')
         }
+        theParentNode && theParentNode.classList.add('active');
         if(subpage){
             switch(page){
                 case 'home':
@@ -43,14 +53,6 @@ class SideNav extends React.Component{
         }
     }
 
-    handleActiveNavigationState = (e)=>{
-        e.stopPropagation();
-        const navigationItems = document.querySelectorAll('.navigation__item');
-        for(let i = 0; i < navigationItems.length; i++){
-            navigationItems[i].classList.remove('active');
-        }
-        this.classList.add('active')
-    }
     render(){
         return (
             <header className='header'>
@@ -67,8 +69,8 @@ class SideNav extends React.Component{
                             <p onClick={(e)=>{ this.handleRotate('home', e) }} className="navigation__link">Home</p></li>
                         <li className="navigation__item">
                             <p onClick={(e)=>{ this.handleRotate('about', e) }} className="navigation__link">About</p></li>
-                        <li className="navigation__item">
-                            <p onClick={(e)=>{ this.handleRotate('resume', e) }} className="navigation__link">Resume</p></li>
+                        <li className="navigation__item active">
+                            <p onClick={(e)=>{ this.handleRotate('resume', e) }} className="navigation__link active">Resume</p></li>
                         <li className="navigation__item">
                             <p onClick={(e)=>{ this.handleRotate('porfolio', e) }} className="navigation__link">Porfolio</p></li>
                         <li className="navigation__item active">

@@ -1,0 +1,30 @@
+.progress__box{
+    margin-bottom: 1.2rem;
+    &--title{
+        font-size: 1.6rem;
+        font-weight: normal;
+        font-family: 'Oswald', sans-serif;
+        color: $color-black;
+    }
+    .progress__container{
+        width: 100%;
+        padding: .4rem;
+        border-radius: .9rem;
+        border: .1rem solid $color-primary;
+    
+        .progress{
+            background-color: $color-primary;
+            height: 1rem;
+            border-radius: .9rem;
+            //animation: expanding 1s ease-in-out 0s forwards;
+        }
+    }
+    @keyframes expanding {
+        0% {
+            width: 0%
+        }
+        100% {
+            width: var(--width-end)
+        }
+    }
+}

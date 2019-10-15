@@ -1,12 +1,11 @@
 import React from 'react';
 
-
-const TitlePage = ({title})=>{
+const BlockTitle = ({title})=>{
     return (
-        <div className="title__page u-mg-bt-medium">
+        <div className='block-title'>
             <h3 className='heading-2'>{title}</h3>
         </div>
     )
 }
 
-export default TitlePage;
+export default BlockTitle;

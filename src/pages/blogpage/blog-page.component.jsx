@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import TitlePage from '../../components/TitlePage/title-page.component'
 
 class Blog extends React.Component{
@@ -20,9 +21,9 @@ class Blog extends React.Component{
                         <span>October 11th, 2019</span>
                         </div>
                         <div className="article__title">
-                        <h2 className="article__title--text">
+                        <Link to='/' className="article__title--text">
                             Featured Snippets: What to Know & How to Target - Whiteboard Friday
-                        </h2>
+                        </Link>
                         </div>
                         <div className="article__description">
                         <p>Featured snippets are still the best way to take up primo SERP real estate, and they seem to be changing all the time. Today, Britney Muller shares the results of the latest Moz research into featured snippet trends and data, plus some fantastic tips and tricks for winning your own.</p>
@@ -30,7 +31,7 @@ class Blog extends React.Component{
                     </div>
                     <footer className="article__footer">
                         <div className="article__footer--read-more">
-                        <a href="/" className="btn btn--secondary">Read More</a>
+                        <Link to="/" className="btn btn--secondary">Read More..</Link>
                         </div>
                         <div className="article__footer--comment">
                         <span>Comment: </span>

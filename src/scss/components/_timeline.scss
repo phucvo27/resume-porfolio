@@ -1,0 +1,57 @@
+.timeline{
+    border-left: .1rem solid #f4f9ed;
+    .event{
+        padding-left: 3rem;
+        margin-bottom: 3rem;
+        &__title{
+            display: inline-block;
+            padding: .5rem 1rem 0.8rem 4rem;
+            margin-left: -4.1rem;
+            background-color: $color-green;
+            position: relative;
+            &::after{
+                display: block;
+                content: '';
+                width: 0rem;
+                height: 0rem;
+                // background-color: red;
+                
+                position: absolute;
+                bottom: -1rem;
+                left: 0;
+                border-bottom: 1rem solid transparent;
+                border-right: 1rem solid $color-green;
+            }
+            &--text {
+                margin-bottom: 0;
+                font-size: 1.3rem;
+                color: $color-white;
+                font-weight: 300;
+                text-shadow: .1rem .1rem .1rem rgba(0,0,0,.1);
+            }
+            
+        }
+
+        &__body{
+            &--title{
+                font-family: 'Oswald', sans-serif;
+                font-size: 1.7rem;
+                color: #222;
+                font-weight: 500;
+                margin-bottom: 1rem;
+                margin-top: 1.2rem;
+            }
+            &--description{
+                font-size: 1.2rem;
+                font-weight: 300;
+                letter-spacing: .04rem;
+                word-spacing: .1rem;
+                margin-bottom: 1.3rem;
+            }
+
+            &--content{
+                font-size: 1.6rem;
+            }
+        }
+    }
+}
