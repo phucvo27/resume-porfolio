@@ -53,7 +53,7 @@ class SideNav extends React.Component{
     }
     render(){
         return (
-            <header>
+            <header className='header'>
                 <div className="user__avatar">
                     <img src={avatar} alt="user-avatar"/>
                 </div>
@@ -63,7 +63,7 @@ class SideNav extends React.Component{
                 </div>
                 <nav>
                     <ul className="navigation">
-                        <li className="navigation__item active">
+                        <li className="navigation__item">
                             <p onClick={(e)=>{ this.handleRotate('home', e) }} className="navigation__link">Home</p></li>
                         <li className="navigation__item">
                             <p onClick={(e)=>{ this.handleRotate('about', e) }} className="navigation__link">About</p></li>
@@ -71,7 +71,7 @@ class SideNav extends React.Component{
                             <p onClick={(e)=>{ this.handleRotate('resume', e) }} className="navigation__link">Resume</p></li>
                         <li className="navigation__item">
                             <p onClick={(e)=>{ this.handleRotate('porfolio', e) }} className="navigation__link">Porfolio</p></li>
-                        <li className="navigation__item">
+                        <li className="navigation__item active">
                             <p onClick={(e)=>{ this.handleRotate('blog', e) }} className="navigation__link">Blog</p></li>
                         <li className="navigation__item">
                             <p onClick={(e)=>{ this.handleRotate('contact', e) }} className="navigation__link">Contact</p></li>

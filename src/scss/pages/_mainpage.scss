@@ -31,9 +31,10 @@
                 height: 100%;
                 background-color: $color-white;
                 padding: 5rem 7rem 5rem;
-                visibility: hidden;
-                opacity: 0;
+                // visibility: hidden;
+                // opacity: 0;
                 transition: all .2s;
+                overflow: auto;
                 &.active {
                     opacity: 1;
                     visibility: visible;
