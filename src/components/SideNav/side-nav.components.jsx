@@ -12,8 +12,8 @@ class SideNav extends React.Component{
     handleRotate = (page, e = null ,parentElement)=>{
         e && e.stopPropagation()
         const theParentNode = e ? e.target.parentElement : parentElement ;
-        const subpage = document.querySelector('.subpage');
-        const listFaces = document.querySelectorAll('.face');
+        const subpage = document.querySelector('.cube');
+        const listFaces = document.querySelectorAll('.cube__face');
         const listNavigationItems = document.querySelectorAll('.navigation__item');
         for(let i = 0; i < listFaces.length; i++){
             listFaces[i].classList.remove('active');
@@ -35,13 +35,13 @@ class SideNav extends React.Component{
                     subpage.style.transform = 'rotateY(-90deg)';
                     document.querySelector('.resume').classList.add('active')
                     return;
-                case 'porfolio':
-                    subpage.style.transform = 'rotateY(180deg)';
-                    document.querySelector('.porfolio').classList.add('active')
-                    return 
                 case 'blog':
-                    subpage.style.transform = 'rotateX(-90deg)';
+                    subpage.style.transform = 'rotateY(180deg)';
                     document.querySelector('.blog').classList.add('active')
+                    return 
+                case 'porfolio':
+                    subpage.style.transform = 'rotateX(-90deg)';
+                    document.querySelector('.porfolio').classList.add('active')
                     return
                 case 'contact':
                     subpage.style.transform = 'rotateX(90deg)';
@@ -66,17 +66,14 @@ class SideNav extends React.Component{
                 <nav>
                     <ul className="navigation">
                         <li className="navigation__item">
-                            <p onClick={(e)=>{ this.handleRotate('home', e) }} className="navigation__link">Home</p></li>
+                            <p onClick={(e)=>{ this.handleRotate('home', e) }} className="navigation__link active">Home</p></li>
                         <li className="navigation__item">
                             <p onClick={(e)=>{ this.handleRotate('about', e) }} className="navigation__link">About</p></li>
                         <li className="navigation__item active">
-                            <p onClick={(e)=>{ this.handleRotate('resume', e) }} className="navigation__link active">Resume</p></li>
+                            <p onClick={(e)=>{ this.handleRotate('resume', e) }} className="navigation__link">Resume</p></li>
                         <li className="navigation__item">
-                            <p onClick={(e)=>{ this.handleRotate('porfolio', e) }} className="navigation__link">Porfolio</p></li>
-                        <li className="navigation__item active">
                             <p onClick={(e)=>{ this.handleRotate('blog', e) }} className="navigation__link">Blog</p></li>
-                        <li className="navigation__item">
-                            <p onClick={(e)=>{ this.handleRotate('contact', e) }} className="navigation__link">Contact</p></li>
+                        
                     </ul>
                 </nav>
             </header>
@@ -86,3 +83,11 @@ class SideNav extends React.Component{
 }
 
 export default SideNav;
+
+/*
+<li className="navigation__item active">
+    <p onClick={(e)=>{ this.handleRotate('blog', e) }} className="navigation__link">Blog</p></li>
+<li className="navigation__item">
+    <p onClick={(e)=>{ this.handleRotate('contact', e) }} className="navigation__link">Contact</p></li>
+
+*/

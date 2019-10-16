@@ -5,10 +5,12 @@ class ContactPage extends React.Component{
 
     render(){
         return (
+            <React.Fragment>
             <div className='container'>
                 <TitlePage title='Contact'/>
                 <h2>This is Contact Page</h2>
             </div>
+            </React.Fragment>
         )
     }
 }

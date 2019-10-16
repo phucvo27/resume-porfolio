@@ -1,14 +1,15 @@
 import React from 'react';
 import TitlePage from '../../components/TitlePage/title-page.component'
 import BlockTitle from '../../components/BlockTitle/block-title.component'
-import ProgressSkill from '../../components/ProgressSkill/progress-skill.component'
+import ProgressSkill from '../../components/ProgressSkill/progress-skill.component';
+
 class ResumePage extends React.Component{
 
     render(){
         return (
-            <div className='container'>
+            <>
                 <TitlePage title='Resume'/>
-                <section className='resume'>
+                <section className='resume-page'>
                     <div className='resume__education'>
                         <BlockTitle title='Education'/>
                         <div className='timeline'>
@@ -70,7 +71,7 @@ class ResumePage extends React.Component{
                         <ProgressSkill title='NodeJS' percent='100%'/>
                     </div>
                 </section>
-            </div>
+            </>
         )
     }
 }
