@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import TitlePage from '../../components/TitlePage/title-page.component'
+import sampleImage from '../../assets/js-logo.jpg';
+import admin from '../../assets/user-avatar.jpg';
 
 class Blog extends React.Component{
 
@@ -10,12 +12,12 @@ class Blog extends React.Component{
             return (
                 <article className="article" key={idx}>
                     <header className="article__header">
-                        <img src="https://moz.com/assets/images/blog/categories/580/advanced-seo.png?0aa8384" alt="post" />
+                        <img src={sampleImage} alt="post" />
                     </header>
                     <div className="article__main">
                         <div className="article__author">
                         <div className="article__author--avatar">
-                            <img src="https://moz.com/img_users/155620.jpg?1552255071" alt="author-avatar" />
+                            <img src={admin} alt="author-avatar" />
                         </div>
                         <span>By: Phuc Vo</span>
                         <span>October 11th, 2019</span>

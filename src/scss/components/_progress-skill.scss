@@ -15,7 +15,9 @@
         .progress{
             background-color: $color-primary;
             height: 1rem;
+            width: 0;
             border-radius: .9rem;
+            //transition: width 1s;
             //animation: expanding 1s ease-in-out 0s forwards;
         }
     }
